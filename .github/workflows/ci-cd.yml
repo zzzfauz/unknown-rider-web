@@ -1,6 +1,5 @@
 name: Laravel CI/CD Pipeline
 
-# Kapan robot ini berjalan? Setiap kali ada kode baru di branch 'main'
 on:
   push:
     branches: [ "main" ]
@@ -9,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest # Robot akan menggunakan OS Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
@@ -24,8 +23,9 @@ jobs:
     - name: Siapkan File .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-- name: Install Dependencies (Composer)
-  run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Install Dependencies (Composer)
+      run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
     - name: Generate Application Key
       run: php artisan key:generate
 
