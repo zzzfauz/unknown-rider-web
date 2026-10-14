@@ -1,0 +1,255 @@
+<mxfile host="app.diagrams.net" pages="3">
+  <diagram name="DFD Level 0 - Context Diagram" id="0">
+    <mxGraphModel dx="1084" dy="620" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="light-dark(#FFFFFF,#BDBDBD)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MEMBER" vertex="1">
+          <mxGeometry height="70" width="160" x="413" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="k" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="KETUA" vertex="1">
+          <mxGeometry height="70" width="160" x="1188" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="ADMIN" vertex="1">
+          <mxGeometry height="70" width="160" x="851" y="603" as="geometry" />
+        </mxCell>
+        <mxCell id="s" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=16;" value="SISTEM PLATFORM DIGITAL UNKNOWN RIDER" vertex="1">
+          <mxGeometry height="150" width="380" x="741" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m_to_s" edge="1" parent="1" source="m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="s" value="Data registrasi, login, profil,&#xa;pengajuan/join komunitas,&#xa;pengajuan/join touring,&#xa;data live location">
+          <mxGeometry relative="1" x="0.0949" y="35" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_to_m" edge="1" parent="1" source="s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="m" value="Hasil autentikasi, data profil,&#xa;status komunitas, status touring,&#xa;informasi touring &amp; live location">
+          <mxGeometry relative="1" x="-0.1062" y="35" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k_to_s" edge="1" parent="1" source="k" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="s" value="Persetujuan/rejection anggota,&#xa;persetujuan/rejection touring,&#xa;pengelolaan anggota &amp; touring">
+          <mxGeometry relative="1" x="-0.2938" y="-35" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_to_k" edge="1" parent="1" source="s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="k" value="Daftar anggota, pengajuan komunitas,&#xa;pengajuan touring, data peserta,&#xa;status &amp; live location peserta">
+          <mxGeometry relative="1" x="-0.0101" y="-27" as="geometry">
+            <mxPoint x="27" y="-27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_to_s" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="s" value="Pengelolaan user, komunitas, touring,&#xa;monitoring sistem">
+          <mxGeometry relative="1" x="-0.2592" y="101" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_to_a" edge="1" parent="1" source="s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=1.5;" target="a" value="Data user, komunitas, touring,&#xa;activity log &amp; hasil monitoring">
+          <mxGeometry relative="1" x="0.707" y="-79" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="DFD Level 1 - Proses Utama" id="1">
+    <mxGraphModel dx="1681" dy="1103" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="900" background="light-dark(#FFFFFF,#BDBDBD)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MEMBER" vertex="1">
+          <mxGeometry height="60" width="140" x="40" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="k" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="KETUA" vertex="1">
+          <mxGeometry height="60" width="140" x="40" y="372" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="KETUA" vertex="1">
+          <mxGeometry height="60" width="140" x="1421" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="&lt;br&gt;AUTENTIKASI &amp;amp; PROFIL" vertex="1">
+          <mxGeometry height="80" width="200" x="252" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="MANAJEMEN KOMUNITAS" vertex="1">
+          <mxGeometry height="80" width="210" x="518" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="MANAJEMEN TOURING" vertex="1">
+          <mxGeometry height="80" width="210" x="855" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="LIVE LOCATION" vertex="1">
+          <mxGeometry height="80" width="210" x="462" y="436" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="RIWAYAT &amp;amp; ACTIVITY LOG" vertex="1">
+          <mxGeometry height="80" width="210" x="881" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="USERS" vertex="1">
+          <mxGeometry height="70" width="170" x="267" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="COMMUNITIES&lt;br&gt;&amp;amp; COMMUNITY_MEMBERS" vertex="1">
+          <mxGeometry height="70" width="220" x="526" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="TOURS&lt;br&gt;&amp;amp; TOUR_MEMBERS" vertex="1">
+          <mxGeometry height="70" width="200" x="855" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="LOCATION_HISTORIES" vertex="1">
+          <mxGeometry height="70" width="200" x="809" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&amp;nbsp;ACTIVITY_LOGS" vertex="1">
+          <mxGeometry height="70" width="170" x="1222" y="362" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="FIREBASE REALTIME DATABASE&#xa;Current Live Location" vertex="1">
+          <mxGeometry height="85" width="230" x="452" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="m" target="p1" value="Registrasi / Login / Profil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="p1" target="m" value="Hasil autentikasi / profil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="p1" target="d1" value="Data akun">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="d1" target="p1" value="Data user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="m" target="p2" value="Ajukan / gabung komunitas">
+          <mxGeometry relative="1" x="-0.2011" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="k" target="p2" value="Setujui / tolak anggota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="p2" target="d2" value="Data komunitas &amp; anggota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="p2" target="m" value="Status &amp; daftar anggota">
+          <mxGeometry relative="1" x="-0.2996" y="-3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="p2" target="k" value="Data komunitas / pengajuan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="m" target="p3" value="Buat / join touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="k" target="p3" value="Setujui / tolak touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="p3" target="d3" value="Data touring &amp; peserta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="p3" target="m" value="Status &amp; detail touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="p3" target="k" value="Pengajuan &amp; peserta touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="m" target="p4" value="Koordinat GPS">
+          <mxGeometry relative="1" x="0.158" y="8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="p4" target="fb" value="Current location realtime">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="fb" target="p4" value="Current location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="p4" target="m" value="Live location peserta">
+          <mxGeometry relative="1" x="-0.3612" y="-5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="p4" target="k" value="Live location peserta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="p4" target="d4" value="Riwayat koordinat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="d4" target="p4" value="Riwayat lokasi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="p1" target="p5" value="Catatan aktivitas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="p2" target="p5" value="Catatan aktivitas komunitas/touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="p4" target="p5" value="Catatan aktivitas live location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="p5" target="d5" value="Simpan activity log">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="p5" target="a" value="Activity log / monitoring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="a" target="p5" value="Monitoring user / komunitas / touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="a" target="p2" value="Kelola user / komunitas / touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="a" target="p3" value="Kelola user / komunitas / touring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="DFD Level 2 - Live Location" id="2">
+    <mxGraphModel dx="1261" dy="527" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1200" pageHeight="850" background="light-dark(#FFFFFF,#BDBDBD)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m" parent="1" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="MEMBER" vertex="1">
+          <mxGeometry height="60" width="140" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="p41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" value="4.1&#xa;Ambil Koordinat GPS" vertex="1">
+          <mxGeometry height="75" width="190" x="143" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" value="4.2&#xa;Validasi &amp; Update Lokasi" vertex="1">
+          <mxGeometry height="75" width="210" x="540" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" value="4.3&#xa;Simpan Riwayat Lokasi" vertex="1">
+          <mxGeometry height="75" width="210" x="907" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="p44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" value="4.4&#xa;Tampilkan Live Location" vertex="1">
+          <mxGeometry height="75" width="210" x="255" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" value="Firebase Realtime Database" vertex="1">
+          <mxGeometry height="75" width="210" x="374" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" parent="1" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="D4 Location Histories&#xa;(MySQL)" vertex="1">
+          <mxGeometry height="75" width="210" x="638" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="k" parent="1" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="KETUA&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="150" x="712" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="m" target="p41" value="Koordinat GPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="p41" target="p42" value="Latitude, longitude, timestamp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="p42" target="fb" value="Lokasi tervalidasi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="fb" target="p44" value="Current location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="p44" target="k" value="Live location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="p44" target="m" value="Live location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="p42" target="p43" value="Lokasi + timestamp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="p43" target="d4" value="Riwayat lokasi">
+          <mxGeometry relative="1" x="0.0031" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
