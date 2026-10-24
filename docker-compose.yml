@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # 1. Container Nginx (Web Server)
+  web:
+    image: nginx:alpine
+    container_name: unknown_rider_web
+    ports:
+      - "8000:80" # Buka web di localhost:8000
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - app_network
+
+  # 2. Container PHP-FPM (Laravel App)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unknown_rider_app
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app_network
+
+  # 3. Container MySQL (Database)
+  db:
+    image: mysql:8.0
+    container_name: unknown_rider_db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: rockbikers_db
+      MYSQL_ROOT_PASSWORD: password_rahasia
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  dbdata:
