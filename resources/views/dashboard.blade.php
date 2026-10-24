@@ -21,10 +21,27 @@
 
     <!-- NAVBAR -->
     <nav class="bg-black p-4 flex justify-between items-center border-b border-orange-600 shadow-md shadow-orange-900/20">
-        <div class="text-2xl font-black text-orange-500 tracking-wider">UNKNOWN RIDER</div>
+        <div class="text-2xl font-black text-orange-500 tracking-wider">
+            UNKNOWN RIDER
+        </div>
+
         <div class="flex items-center space-x-4">
-            <span class="text-gray-300">Halo, <span class="font-bold text-white">Rider (Dummy)</span></span>
-            <button class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded font-bold text-sm transition">Logout</button>
+            <span class="text-gray-300">
+                Halo,
+                <span class="font-bold text-white">
+                    {{ Auth::user()->name }}
+                </span>
+            </span>
+
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button
+                    type="submit"
+                    class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded font-bold text-sm transition"
+                >
+                    Logout
+                </button>
+            </form>
         </div>
     </nav>
 
