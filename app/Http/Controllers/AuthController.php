@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\CommunityMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,7 +36,7 @@ class AuthController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect()->route('dashboard');
+        return $this->redirectByRole($user);
     }
 
     public function showLogin()
@@ -50,17 +51,52 @@ class AuthController extends Controller
             'password' => ['required', 'string'],
         ]);
 
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
-            $request->session()->regenerate();
-
-            return redirect()->intended(route('dashboard'));
+        if (!Auth::attempt(
+            $credentials,
+            $request->boolean('remember')
+        )) {
+            return back()
+                ->withErrors([
+                    'email' => 'Email atau password tidak sesuai.',
+                ])
+                ->onlyInput('email');
         }
 
-        return back()
-            ->withErrors([
-                'email' => 'Email atau password tidak sesuai.',
-            ])
-            ->onlyInput('email');
+        $request->session()->regenerate();
+
+        return $this->redirectByRole(Auth::user());
+    }
+
+    // Mengarahkan pengguna berdasarkan role dan keanggotaan
+    private function redirectByRole(User $user)
+    {
+        // Admin langsung menuju Dashboard Admin
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
+        // Periksa keanggotaan aktif
+        $activeMembership = CommunityMember::where('user_id', $user->id)
+            ->where('status', 'active')
+            ->exists();
+
+        if ($activeMembership) {
+            return redirect()->route('dashboard');
+        }
+
+        // Periksa pengajuan yang masih menunggu persetujuan
+        $pendingMembership = CommunityMember::where('user_id', $user->id)
+            ->where('status', 'pending')
+            ->exists();
+
+        if ($pendingMembership) {
+            return redirect()
+                ->route('communities.index')
+                ->with('info', 'Pengajuan bergabung kamu sedang menunggu persetujuan Ketua.');
+        }
+
+        // Pengguna yang belum bergabung diarahkan ke daftar komunitas
+        return redirect()->route('communities.index');
     }
 
     public function logout(Request $request)

@@ -47,6 +47,27 @@
 
     <!-- MAIN DASHBOARD -->
 <div class="container mx-auto p-4 mt-6">
+    {{-- MENU KHUSUS KETUA --}}
+@if (Auth::user()->role === 'ketua' && $ledCommunity)
+
+    <div class="mb-6 rounded-xl border border-orange-500/30 bg-gray-800 p-5 shadow-lg">
+
+        <h2 class="mb-2 text-xl font-bold text-orange-500">
+            Manajemen Ketua
+        </h2>
+
+        <p class="mb-4 text-gray-300">
+            Kelola komunitas dan permintaan anggota yang ingin bergabung.
+        </p>
+
+        <a href="{{ route('ketua.communities.requests.index', $ledCommunity->id) }}"
+           class="inline-block rounded-lg bg-orange-600 px-5 py-3 font-bold text-white hover:bg-orange-700">
+            Lihat Permintaan Bergabung
+        </a>
+
+    </div>
+
+@endif
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 
     <!-- KOLOM KIRI: Peta Safety Ride -->
