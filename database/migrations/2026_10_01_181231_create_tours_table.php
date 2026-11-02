@@ -19,8 +19,9 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->foreignId('created_by')
+                ->nullable()
                 ->constrained('users')
-                ->cascadeOnDelete();
+                ->nullOnDelete();
 
             $table->string('title');
             $table->text('description')->nullable();
@@ -49,8 +50,8 @@ return new class extends Migration
             $table->timestamp('finished_at')->nullable();
 
             $table->timestamps();
-        });
-    }
+                });
+        }
 
     /**
      * Reverse the migrations.
