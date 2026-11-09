@@ -1,5 +1,5 @@
 # Menggunakan image PHP-FPM (tanpa web server bawaan)
-FROM php:8.2-fpm
+FROM php:8.3-fpm
 
 # Mengatur folder kerja di dalam container
 WORKDIR /var/www/html
