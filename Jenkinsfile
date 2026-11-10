@@ -1,11 +1,22 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\php84;C:\\ProgramData\\ComposerSetup\\bin;${env.PATH}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 echo 'Mengambil source code Unknown Rider'
                 checkout scm
+            }
+        }
+
+        stage('Check Environment') {
+            steps {
+                bat 'php --version'
+                bat 'composer --version'
             }
         }
 
