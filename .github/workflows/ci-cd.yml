@@ -34,3 +34,6 @@ jobs:
 
     - name: Jalankan Testing Laravel
       run: php artisan test
+
+    - name: Siapkan file .env
+      run: cp .env.example .env
