@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        PATH = "C:\\php84;C:\\ProgramData\\ComposerSetup\\bin;${env.PATH}"
+    PATH = "C:\\php84;C:\\ProgramData\\ComposerSetup\\bin;${env.PATH}"
+    APP_ENV = 'testing'
+    APP_KEY = 'base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
     }
-
     stages {
         stage('Checkout') {
             steps {
