@@ -49,9 +49,14 @@ class TrackingController extends Controller
 
     public function getSemuaLokasi()
     {
-        // Ambil data lokasi terbaru dari database
+        // Hanya ambil 1 titik lokasi paling akhir (terbaru) untuk setiap user_id
         $lokasi = DB::table('location_histories')
-            ->orderBy('id', 'desc')
+            ->select('user_id', 'latitude', 'longitude', 'updated_at')
+            ->whereIn('id', function($query) {
+                $query->select(DB::raw('MAX(id)'))
+                      ->from('location_histories')
+                      ->groupBy('user_id');
+            })
             ->get();
 
         return response()->json([
