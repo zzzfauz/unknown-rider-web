@@ -21,8 +21,8 @@ jobs:
         extensions: mbstring, bcmath, pdo_mysql, dom, xml
 
     - name: Siapkan File .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-
+      run: cp .env.example .env
+      
     - name: Install Dependencies (Composer)
       run: composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
 
@@ -34,6 +34,3 @@ jobs:
 
     - name: Jalankan Testing Laravel
       run: php artisan test
-
-    - name: Siapkan file .env
-      run: cp .env.example .env
